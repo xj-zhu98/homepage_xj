@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html --><html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trajectory Synthesis with Local Differential Privacy | Multidata Lab</title>
+    <meta name="author" content="Xinjun  Zhu">
+    <meta name="description" content="A group website of Multidata-Lab Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Bootstrap Table -->
+    <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    
+    <!-- Sidebar Table of Contents -->
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="/blog/2023/04/22/LDPTrace/">
+
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    <script src="/assets/js/distillpub/overrides.js"></script>
+    
+  </head>
+
+  <body>
+<d-front-matter>
+    <script async type="text/json">{
+      "title": "Trajectory Synthesis with Local Differential Privacy",
+      "description": "",
+      "published": "April 22, 2023",
+      "authors": [
+        {
+          "author": "Yuntao Du",
+          "authorURL": "https://zealscott.com",
+          "affiliations": [
+            {
+              "name": "Zhejiang University",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold"> Yuntao Du </span></a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/resume/">Resume</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/publications/">Publications</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/notes/">Notes</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/blog/index.html">blog</a>
+              </li>
+<!--  -->
+              <!-- Blog -->
+              <!-- <li class="nav-item active">
+                <a class="nav-link" href="/blog/">Blog<span class="sr-only">(current)</span></a>
+              </li> -->
+              <!-- Toogle theme mode -->
+              <li class="toggle-container">
+                <button id="light-toggle" title="Change theme">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Scrolling Progress Bar -->
+      <progress id="progress" value="0">
+        <div class="progress-container">
+          <span class="progress-bar"></span>
+        </div>
+      </progress>
+    </header>
+
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1>Trajectory Synthesis with Local Differential Privacy</h1>
+        <p></p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        <d-contents>
+          <nav class="l-text figcaption">
+          <h3>Contents</h3>
+            <div><a href="#"></a></div>
+            
+          </nav>
+        </d-contents>
+
+        <p>This is the gentle introduction to our <a href="https://arxiv.org/abs/2302.06180" rel="external nofollow noopener" target="_blank">work</a> which will be represented at <a href="https://vldb.org/2023/" rel="external nofollow noopener" target="_blank">VLDB 2023</a>. Code and datasets are available at <a href="https://github.com/zealscott/LDPTrace" rel="external nofollow noopener" target="_blank">Github</a>.</p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Trajectory data is widely used for many real-world applications, such as tracking the spread of the disease through people’s movement patterns and providing personalized location-based services based on travel preference. However, privacy concerns and data protection regulations have limited the extent to which this data is shared and utilized. Current <a href="https://en.wikipedia.org/wiki/Differential_privacy" rel="external nofollow noopener" target="_blank">differential privacy (DP)</a> techniques rely on a <em>trustworthy aggregator</em> to collect users’ raw trajectories, which still suffer from the risk of data breaches from untrustworthy data curators.</p>
+
+<div class="row justify-content-md-center">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2023_04_22_LDPTrace/dp_and_ldp-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2023_04_22_LDPTrace/dp_and_ldp-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2023_04_22_LDPTrace/dp_and_ldp-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2023_04_22_LDPTrace/dp_and_ldp.png" class="img-fluid rounded z-depth-1" width="70%" height="auto" title="DP vs LDP" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    DP vs LDP. Image source: <a href="https://blog.openmined.org/basics-local-differential-privacy-vs-global-differential-privacy/" rel="external nofollow noopener" target="_blank">OpenMinded</a>.
+</div>
+
+<p>In contrast, <a href="https://en.wikipedia.org/wiki/Local_differential_privacy" rel="external nofollow noopener" target="_blank">local differential privacy (LDP)</a> allows users to directly share a noisy version of their data, provides a more practical setting and improved privacy properties. The only solution that meets the rigorous privacy requirements is NGRAM<d-cite key="ngram"></d-cite>. However, this approach suffers from poor global utility, auxiliary knowledge dependence, high computational overhead, and vulnerability to attacks. Therefore, we offer a new privacy-preserving paradigm to protect users’ trajectory data, named LDPTrace, to solve these issues while provides the provable guarantee of LDP.</p>
+
+<h1 id="our-approach">Our approach</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>Instead of perturbing each trajectory individually, we aim to extract the <strong>key movement patterns</strong> of each user and use them to synthesize privacy-preserving and realistic trajectories. Specifically, LDPTrace approaches trajectory synthesis as a generative process, constructing a probabilistic model based on users’ transition records to estimate the global moving patterns. The key movement patterns are locally extracted from raw trajectory and perturbed/uploaded with OUE<d-cite key="oue"></d-cite> protocol. The overall framework is illustrated as below:</p>
+
+<div class="row justify-content-md-center">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2023_04_22_LDPTrace/framework-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2023_04_22_LDPTrace/framework-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2023_04_22_LDPTrace/framework-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2023_04_22_LDPTrace/framework.png" class="img-fluid rounded z-depth-1" width="70%" height="auto" title="Framework" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    The framework of LDPTrace.
+</div>
+
+<h2 id="key-movement-patterns">Key movement patterns</h2>
+
+<p>The probabilistic model consists of three key features:</p>
+
+<ol>
+  <li>
+<strong>Intra-Trajectory Mobility</strong>. Transition states are important to capture the movement of spatial data, and we model the mobility with a first-order Markov chain, which means we only care the spatial relationship between adjacent points.</li>
+</ol>
+
+<p>\begin{equation}
+\operatorname{Pr}(T[l+1]=C \mid T[1] \ldots T[l])=\operatorname{Pr}(T[l+1]=C \mid T[l])
+\end{equation}</p>
+
+<ol>
+  <li>
+    <p><strong>Beginning/Terminated Transitions</strong>. Real-world trajectory usually exhibit special start point and end point, which reveal the important spatial semantic of trajectories: pickups, home/work places, destinations, etc. Besides, the start/end points are also useful to guide the random walk during synthesis. Therefore, we add two special cells, namely <em>virtual</em> start point and <em>virtual</em> end point, which are connected to all the geographic points and are perturbed and uploaded along with the mobility patterns.</p>
+  </li>
+  <li>
+    <p><strong>Trajectory Length</strong>. The length distribution of trajectories is also an indispensable character of trajectory synthesis since it indicates the probabilistic travel distance of users’ trace, and serves as the deterministic constraint to terminate the synthesis process. We also use OUE to gather length information from each trajectory and form a discrete distribution on the data curator.</p>
+  </li>
+</ol>
+
+<h2 id="trajectory-synthesis">Trajectory synthesis</h2>
+
+<p>After getting the three global spatial features from trajectories, we first combine the intra-trajectory mobility with virtual start/end mobility, and utilize random walk to generate authentic trajectories from them. Here are the main steps of our synthesis algorithm:</p>
+
+<div class="row justify-content-md-center">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2023_04_22_LDPTrace/synthesis-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2023_04_22_LDPTrace/synthesis-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2023_04_22_LDPTrace/synthesis-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2023_04_22_LDPTrace/synthesis.png" class="img-fluid rounded z-depth-1" width="60%" height="auto" title="Trajectory synthesis" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Trajectory synthesis from key movement patterns.
+</div>
+
+<p>It is worth mentioning that we found the adaptive terminated condition (line 5) is very helpful to generate faithful trajectories (otherwise it would be too short to show the spatial characters), but it is still an open question that how to integrate the handcraft adaptive mechanism into the feature selection process.</p>
+
+<h1 id="experiments">Experiments</h1>
+
+<h2 id="effectiveness">Effectiveness</h2>
+
+<p>We conduct extensive experiments on four benchmark trajectory datasets (three of them are released in our <a href="https://github.com/zealscott/LDPTrace" rel="external nofollow noopener" target="_blank">repository</a>). For utility metrics, we follow AdaTrace<d-cite key="adtrace"></d-cite> and comprehensively evaluate our method with various metrics from global level, trajectory level to semantic level. From fair comparison, we discard the auxiliary temporal and POI information in NGRAM, and only leverage physical distance to ensure the closeness between original and sampled n-grams in geospatial space. The results show that LDPTrace outperform the baseline by a large margin.</p>
+
+<div class="row justify-content-md-center">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2023_04_22_LDPTrace/utility-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2023_04_22_LDPTrace/utility-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2023_04_22_LDPTrace/utility-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2023_04_22_LDPTrace/utility.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="Utility performance comparison" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Utility performance comparison. The best result in each category is shown in bold. For Kendall-tau and FP F1 Similarity, higher values are better. For remaining metrics, lower values are better.
+</div>
+
+<h2 id="efficiency">Efficiency</h2>
+
+<p>Efficiency is equally important as utility for real-world deployments, we conduct comprehensive experiments to evaluate
+the average running time of each component, as show in the following figure. We find that LDPTrace is a very efficient privacy-preserving trajectory publication framework, which is more than 300 times faster than NGRAM.</p>
+
+<div class="row justify-content-md-center">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2023_04_22_LDPTrace/efficiency-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2023_04_22_LDPTrace/efficiency-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2023_04_22_LDPTrace/efficiency-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2023_04_22_LDPTrace/efficiency.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="Runtime" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Average runtime in seconds.
+</div>
+
+<h2 id="attack-resilience">Attack resilience</h2>
+
+<p>We also investigate LDPTrace’s resistance to two common attacks, namely re-identification attack and outlier attack, which are defined in this paper<d-cite key="adtrace"></d-cite>. The results indicate that LDPTrace has impressive ability to resist these two attacks: more than 88% trajectories can be successfully protected in re-identification attack, and all trajectories are hidden from outliers when the privacy parameter changes its value from 2 to 10. On the contrary, NGRAM cannot provide provable protections to these attacks, especially when the demand of protection is more strict. We contribute the superiority of LDPTrace to the synthesis design: since the published trajectories do not resemble any real trajectory, it is much more difficult for attackers to identify traces that they are interested in.</p>
+
+<div class="row justify-content-md-center">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2023_04_22_LDPTrace/attack-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2023_04_22_LDPTrace/attack-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2023_04_22_LDPTrace/attack-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2023_04_22_LDPTrace/attack.png" class="img-fluid rounded z-depth-1" width="70%" height="auto" title="Attack" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Attack resilience analysis on Oldenburg dataset.
+</div>
+
+<h2 id="ablation-study">Ablation study</h2>
+
+<p>Finally, we conduct in-depth analysis with LDPTrace, like impact of beginning/terminated transitions, impact of grid granularity, impact of different query size. Please refer to our paper for details if interested.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>In this paper, we present a neat yet effective trajectory synthesis
+framework under the rigorous privacy of LDP, called LDPTrace,
+which achieves strong utility and efficiency simultaneously. Although the privacy issues of trajectory data is extensively studied in recent year, I still think there is more room to achieve better privacy-utility-efficiency tradeoff. Maybe the synthesis approach (LDPTrace) is a plausible way.</p>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+      <d-bibliography src="/assets/bibliography/2023-04-22-LDPTrace.bib"></d-bibliography>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5">
+      <div class="container">
+        © Copyright 2024 Xinjun  Zhu. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.Last updated: January 17, 2024.
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '');
+  </script>
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": navbarHeight });
+    $("progress-container").css({ "padding-top": navbarHeight });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  
+</body>
+</html>
