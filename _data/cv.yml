@@ -1,0 +1,65 @@
+- title: Education
+  type: time_table
+  contents:
+    - title: Ph.D. in Computer Science
+      institution: Purdue University, West Lafayette, United States
+      year: 2028 (expected)
+      description:
+        - Advised by Prof. <a href="https://www.cs.purdue.edu/homes/ninghui">Ninghui Li</a>.
+    
+    - title: M.E. in Computer Technology
+      institution: Zhejiang University, Hangzhou, China
+      year: 2023
+      description:
+        - Graduated with the highest distinction.
+        - Advised by Prof. <a href="https://person.zju.edu.cn/en/gaoyj_en">Yunjun Gao</a>.
+        
+    - title: B.E. in Data Science
+      institution: East China Normal University, Shanghai, China
+      year: 2020
+      description:
+        - Graduated with the highest distinction.
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: Research Intern
+      institution: Microsoft Research Asia, Beijing, China.
+      year: 2022
+      description:
+        - Hosted by Dr. <a href="https://www.microsoft.com/en-us/research/people/jialia">Jianxun Lian</a> and Dr. <a href="https://www.microsoft.com/en-us/research/people/xingx/">Xing Xie</a>.
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2023
+      items: 
+        - SIGIR Student Travel Grant
+        - Ross Fellowship, Purdue University
+        - Herbold Scholarship, Purdue University
+        - Presidential Doctoral Excellence Awards, Purdue University
+        - Provincial Outstanding Graduates, Zhejiang University
+    - year: 2022
+      items: 
+        - National Scholarship, Zhejiang University
+        - Excellent Graduate Student, Zhejiang University
+        - SIGIR Student Travel Grant
+    - year: 2021
+      items: 
+        - National Scholarship, Zhejiang University
+        - Excellent Graduate Student, Zhejiang University
+
+- title: Professional Services
+  type: nested_list
+  contents:
+    - title: Conference Reviewer
+      items: 
+        - "The AAAI Conference on Artificial Intelligence (AAAI): 2023, 2024"
+        - "ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR): 2023."
+        - "International ACM SIGIR Conference on Information Retrieval in the Asia Pacific (SIGIR-AP): 2023."
+        - "International Conference on Neural Information Processing (ICONIP): 2023."
+    - title: Journal Reviewer
+      items:
+        - IEEE Transactions on Knowledge and Data Engineering (TKDE)
+        - ACM Transactions on Recommender Systems (TORS)
+
