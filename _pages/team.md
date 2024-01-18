@@ -1,10 +1,10 @@
 ---
 layout: page
-permalink: /research/
-title: Research
+permalink: /team/
+title: Team
 description: All of my notes are available with GitBook. Feel free to contact me if you want the PDF version.
 nav: true
-nav_order: 3
+nav_order: 1
 ---
 
 

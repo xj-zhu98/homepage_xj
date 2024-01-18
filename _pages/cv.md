@@ -1,8 +1,8 @@
 ---
 layout: cv
-permalink: /resume/
-title: Resume
+permalink: /award/
+title: Award
 nav: true
-nav_order: 1
+nav_order: 4
 # cv_pdf: example_pdf.pdf
 ---

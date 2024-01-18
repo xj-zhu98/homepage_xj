@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2023-04-13 15:59:00-0400
+date: 2024-01-18
 inline: true
 related_posts: false
 ---
 
-One paper is accepted by SIGIR on robust knowledge-aware recommendation!
+One paper is accepted by TKDE on (xxx), congrats to (xxx)!
