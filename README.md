@@ -1,3 +1,8 @@
+## _pages
+
+## _news
+* 在_news目录下新增md文件，更新Home页面的news显示
+
 # al-folio
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [maintainers]: https://img.shields.io/badge/maintainers-4-success.svg 'Number of maintainers'
