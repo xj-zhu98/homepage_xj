@@ -2,67 +2,25 @@
 layout: page
 permalink: /join_us/
 title: Join Us
-description: All of my notes are available with GitBook. Feel free to contact me if you want the PDF version.
+# description: We are always looking for new group members with passion!
 nav: true
 nav_order: 5
 ---
 
+#### **We are always looking for new group members with passion !**
 
-**11-785 CMU Deep learning** *(Spring 2020)*
+* If you’re interested in our research fields, please feel free to contact Prof. [Lu Chen]() via Email.
+* Welcome passionate new PhD and master students who are preparing for further study.
+* Welcome undergraduate students who are interested in research, including those participating in the SRTP competition or engaged in graduation projects.
 
-* [Guideline](./cmu-dl/index.html)
-* [Notes](./cmu-dl/L02%20Network%20represent.html)
+--- 
 
-**Machine Learning** *(Fall 2019)*
+#### **Address Info**
 
-* [Syllabus](./ml/index.html)
-* [Notes](./ml/Keynotes.html)
-* [Recap](./ml/recap.html)
+Room 402, Zetong Building<br>
+Zhejiang University<br>
+No.38, Zheda Road, Xihu District<br>
+Hangzhou, China
 
-**Data Mining** *(Spring 2019)*
-
-* [Notes](./datamining/index.html)
-
-**Advanced Database System** *(Spring 2019)*
-
-* [Syllabus](./advancedb/index.html)
-* [Notes](./advancedb/leveldb1.html)
-
-**Data Warehouse and OLAP** *(Spring 2019)*
-
-* [Project](./olap)
-
-**Data Management Systems** *(Fall 2018)*
-
-* [Guideline](./db/index.html)
-* [Notes](./db/notes/data%20model.html)
-* [Recap](./db/recap/Distributed%20DB.html)
-* [Project](./db/project/postgre1.html)
-
-**Distributed System** *(Fall 2018)*
-
-* [Guideline](./ds)
-* [Notes](./ds/notes/Distribution-File-System-DFS.html)
-* [Recap](./ds/recap/fundamental-of-distributed-system.html)
-* [Project](./ds/project/rpc.html)
-
-**Convex Optimization** *(Fall 2018)*
-
-* [Notes](./convexoptimization)
-
- **Statistics And Data Analysis** *(Fall 2018)*
-
-- [Notes](./stat)
-- Auxiliary materials
-  - [Gamma function](https://zealscott.com/files/misc/Gamma.pdf)
-  - [Gibbs Sampling](https://zealscott.com/files/misc/GibbsSampling.pdf)
-
-**Operating System** *(Spring 2018)*
-
-* [Notes](./os)
-* [Projects](./os/projects/minix.html)
-
-**Linear Algebra** *(Spring 2018)*
-
-* [Notes](./linearalgebra)
+---
 

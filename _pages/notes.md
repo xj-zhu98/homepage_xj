@@ -1,9 +1,9 @@
 ---
 layout: page
-permalink: /research/
-title: Research
-description: All of my notes are available with GitBook. Feel free to contact me if you want the PDF version.
-nav: true
+permalink: /note/
+title: Note
+# description: 
+nav: false
 nav_order: 3
 ---
 

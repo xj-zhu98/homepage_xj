@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle: Welcome to the Multidata Research Group!
+subtitle: Welcome to the Multidata Research Group !
 
 profile:
   align: right
@@ -18,7 +18,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 --- 
 
-Our group is led by Prof. Lu Chen, Researcher of Zhejiang University's "Hundred Talents Program", doctoral Supervisor, National Special Young Expert (2021). We specialize in the management and analysis of multimodal and spatiotemporal big data. Our group has published more than 80 articles in international top conferences and journals, including VLDBJ、TKDE、SIGMOD、VLDB、ICDE、SIGIR etc.
+Our group is led by Prof. Lu Chen, Researcher of Zhejiang University's "Hundred Talents Program", doctoral Supervisor, National Special Young Expert (2021). We specialize in the management and analysis of multimodal and spatio-temporal big data. Our group has published more than 80 articles in international top conferences and journals, including VLDBJ、TKDE、SIGMOD、VLDB、ICDE、SIGIR etc.
 
 We warmly welcome passionate new PhD and master students who are preparing for further study, as well as undergraduate students who are interested in research, including those participating in the SRTP competition or engaged in graduation projects, to join our laboratory ([join us]({{ site.baseurl }}/join_us))!
 
