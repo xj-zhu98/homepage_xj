@@ -26,3 +26,15 @@ nav_order: 1
 ---
 
 ### **Alumni**
+
+#### New Member 1
+
+[![Member 1](/assets/img/android-chrome-192x192.png)](cv)
+**Member 1 Name**  
+Position/Title
+
+#### New Member 1
+
+[![Member 1](/assets/img/android-chrome-192x192.png)](cv)
+**Member 1 Name**  
+Position/Title
