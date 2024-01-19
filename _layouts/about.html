@@ -48,7 +48,8 @@ layout: default
           <!-- News -->
           {% if page.news and site.announcements.enabled -%}
             <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit;">News</a></h2>
-            {%- include news.html limit=true %}
+            {%- include news.html limit=3 %}
+            <p><a href="{{ '/news/' | relative_url }}">... View all news</a></p>
           {%- endif %}
 
           <!-- Latest posts -->
@@ -61,6 +62,7 @@ layout: default
           {% if page.selected_papers -%}
             <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">Selected Publications</a></h2>
             {%- include selected_papers.html %}
+            <p><a href="{{ '/publications/' | relative_url }}">... View all publications</a></p>
           {%- endif %}
 
           <!-- Social -->
