@@ -12,9 +12,9 @@
 - category: Master
   people:
     - name: Xinjun Zhu
-      image: /assets/img/team_photo/cl_zju.jpg
-      desc: ieee 
-      url: https://person.zju.edu.cn/luchen/
+      image: /assets/img/team_photo/zxj_zju.jpg
+      desc: Master (Start in 2021).
+      url: /team/xinjun-zhu/
       email: xjzhu@zju.edu.cn
 
 - category: Undergraduate
