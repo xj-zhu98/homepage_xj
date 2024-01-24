@@ -9,7 +9,7 @@ nav_order: 5
 
 #### **We are always looking for new group members with passion !**
 
-* If you’re interested in our research fields, please feel free to contact Prof. [Lu Chen]() via Email.
+* If you’re interested in our research fields, please feel free to contact Prof. [Lu Chen](https://person.zju.edu.cn/luchen/) via Email.
 * Welcome passionate new PhD and master students who are preparing for further study.
 * Welcome undergraduate students who are interested in research, including those participating in the SRTP competition or engaged in graduation projects.
 
