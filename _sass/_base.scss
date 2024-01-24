@@ -536,6 +536,46 @@ footer.sticky-bottom {
   }
 }
 
+// Team
+
+.team-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-circle {
+  border-radius: 50%;
+  padding-bottom:0;
+  margin-bottom:0;
+  width:175px;
+  height:175px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.row-centered {
+  text-align:center;
+}
+
+.col-centered {
+  display:inline-block;
+  float:none;
+  text-align:left; /* reset the text-align */
+  margin-right:-5px; /* inline-block space fix */
+}
+
+.thumbnail {
+  position:relative;
+  padding:0;
+  border:0;
+}
+
+.clear {
+  clear: both;
+}
+
+.italic-text {
+  font-style: italic;
+}
 
 // Publications
 

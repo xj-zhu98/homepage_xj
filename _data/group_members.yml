@@ -1,0 +1,22 @@
+- category: Faculty
+  people:
+    - name: Lu Chen
+      image: /assets/img/team_photo/cl_zju.jpg
+      desc: Professor, Doctoral supervisor
+      url: https://person.zju.edu.cn/luchen/
+      email: luchen@zju.edu.cn
+  
+
+- category: PhD
+
+- category: Master
+  people:
+    - name: Xinjun Zhu
+      image: /assets/img/team_photo/cl_zju.jpg
+      desc: ieee 
+      url: https://person.zju.edu.cn/luchen/
+      email: xjzhu@zju.edu.cn
+
+- category: Undergraduate
+
+- category: Alumni
