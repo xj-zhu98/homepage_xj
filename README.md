@@ -21,7 +21,7 @@ Why Jekyll? Read [Andrej Karpathy's blog post](https://karpathy.github.io/2014/0
 
 ## Main pages
 
-网站导航栏页面，可在`_pages/`目录下按需求新增。
+网站导航栏页面，可在`_pages/`目录下按需求新增。网站总配置文件`_config.yml`修改title、脚注和基础配置等。
 
 ### Home
 
@@ -71,7 +71,7 @@ Publications页面概要位于`_pages/publications.md`，排版设置位于`_lay
   code         = {https://github.com/xj-zhu98/KRDN},  # 论文代码链接
   selected     = {true},    # 是否在Home页面的Selected Publications栏目显示
   abbr         = {SIGIR},   # 会议名称
-  preview      = {SIGIR23_KRDN.jpg}  # 论文框架图
+  preview      = {SIGIR23_KRDN.jpg}  # 论文框架图，放置于`/assets/img/publication_preview/`目录下
 }
 
 # 期刊论文格式
