@@ -8,6 +8,12 @@
   
 
 - category: PhD
+  people:
+    - name: Danlei Hu
+      image: /assets/img/team_photo/hdl_zju.jpg
+      desc: PhD (Start in 2021).
+      url: /team/danlei-hu/
+      email: dlhu@zju.edu.cn
 
 - category: Master
   people:
