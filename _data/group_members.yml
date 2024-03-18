@@ -3,7 +3,8 @@
     - name: Lu Chen
       image: /assets/img/team_photo/cl_zju.jpg
       desc: Professor, Doctoral supervisor
-      url: https://person.zju.edu.cn/luchen/
+      # url: https://person.zju.edu.cn/luchen/
+      url: /team/lu-chen/
       email: luchen@zju.edu.cn
   
 
