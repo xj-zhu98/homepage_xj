@@ -75,16 +75,20 @@ Publications页面概要位于`_pages/publications.md`，排版设置位于`_lay
 }
 
 # 期刊论文格式
-@article{TKDE23_Model,
-  author    = {Minjun Zhao and
+@article{TKDE22_MetaKG22,
+  author    = {Yuntao Du and
+               Xinjun Zhu and
                Lu Chen and
-               Keyu Yang and
-               Yuntao Du and 
+               Ziquan Fang and 
                Yunjun Gao},
-  title     = {Finding Materialized Models for Model Reuse},
+  title     = {{MetaKG:}  Meta-learning on Knowledge Graph for Cold-start Recommendation},
   journal   = {IEEE Transactions on Knowledge and Data Engineering (TKDE)},
-  year      = {2023},
-  abbr      = {TKDE}
+  year      = {2022},
+  pdf       = {https://arxiv.org/pdf/2202.03851.pdf},
+  code      = {https://github.com/ZJU-DAILY/MetaKG},
+  selected  = {true},
+  abbr      = {TKDE},
+  preview   = {TKDE22_MetaKG.jpg}
 }
 ```
 
