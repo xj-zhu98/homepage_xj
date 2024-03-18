@@ -13,8 +13,8 @@ profile:
 
 **Professor, Doctoral supervisor**  
 *Multidata Lab*  
-*College of Computer Science*  
-*Zhejiang University*
+*College of Computer Science, Zhejiang University*<br>
+*[Campus homepage](https://person.zju.edu.cn/luchen/)*
 
 **Contact Information:**  
 Room 402, Zetong Building, Zhejiang University, Hangzhou, China  
